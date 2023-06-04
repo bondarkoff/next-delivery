@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import RestaurantsList from '@/components/restaurantsList/RestaurantsList';
 
 export default function Home() {
     return (
@@ -11,9 +12,7 @@ export default function Home() {
             </Head>
             <main className=''>
                 <div className='container mx-auto'>
-                    <div className='pt-8'>
-                        <div className=''>Hello world!</div>
-                    </div>
+                    <RestaurantsList />
                 </div>
             </main>
         </>
