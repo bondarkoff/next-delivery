@@ -9,8 +9,12 @@ export default function Home() {
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 <link rel='icon' href='/favicon.ico' />
             </Head>
-            <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-                <div className=''>Hello World!</div>
+            <main className=''>
+                <div className='container mx-auto'>
+                    <div className='pt-8'>
+                        <div className=''>Hello world!</div>
+                    </div>
+                </div>
             </main>
         </>
     );
