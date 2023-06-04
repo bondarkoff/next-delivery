@@ -32,7 +32,7 @@ const RestaurantsList = () => {
                     </ul>
                     {selectedRestaurant && (
                         <div className='text-xl ml-5'>
-                            <h3 className='text-2xl'>{selectedRestaurant.name} items</h3>
+                            <h3 className='text-2xl font-bold'>{selectedRestaurant.name} items</h3>
                             <RestaurantsItems items={selectedRestaurant.items} />
                         </div>
                     )}
