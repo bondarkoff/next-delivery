@@ -17,15 +17,22 @@ const RestaurantsList = () => {
 
     return (
         <div className='pt-7'>
-            <div className='text-2xl'>Restaurants List</div>
+            <div className='flex justify-between items-center'>
+                <div className='text-2xl'>Restaurants List</div>
+                <div className='flex flex-row content-center flex-wrap'>
+                    <a className='text-xl cursor-pointer transition duration-150 hover:text-slate-600'>
+                        Shopping cart
+                    </a>
+                </div>
+            </div>
             <div className='flex flex-row bg-slate-100 rounded-md mt-5 p-5 shadow-md h-full w-full'>
                 <ul className='border-r-4 w-48'>
                     {restaurants.map(restaurant => (
                         <li
                             className={
                                 selectedRestaurant && selectedRestaurant.name == restaurant.name
-                                    ? 'text-3xl mt-5 first:mt-0 font-medium transition duration-150 transform cursor-pointer text-black'
-                                    : 'text-2xl mt-5 first:mt-0 transition duration-150 cursor-pointer text-black/50'
+                                    ? 'text-3xl mt-5 first:mt-0 font-medium transition duration-150 transform cursor-pointer text-black '
+                                    : 'text-2xl mt-5 first:mt-0 transition duration-150 cursor-pointer text-black/50 hover:text-black/70'
                             }
                             key={restaurant.id}
                             onClick={() => selectedRestaurantClick(restaurant)}>

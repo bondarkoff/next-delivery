@@ -7,7 +7,7 @@ const RestaurantsItems = ({ items }) => {
             {items.map(item => (
                 <div
                     key={item.id}
-                    className='mt-5 p-3 bg-slate-50 rounded-md flex flex-col justify-between cursor-pointer hover:bg-orange-200 transition duration-150'>
+                    className='mt-5 p-3 bg-slate-50 rounded-md flex flex-col justify-between cursor-pointer hover:bg-slate-300 transition duration-150'>
                     <div className=''>
                         <Image
                             src={item.image}
