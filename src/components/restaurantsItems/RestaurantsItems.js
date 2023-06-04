@@ -3,16 +3,22 @@ import Price from './Price';
 
 const RestaurantsItems = ({ items }) => {
     return (
-        <div className='flex flex-row flex-wrap justify-center'>
+        <div className='grid grid-cols-4 gap-5'>
             {items.map(item => (
                 <div
                     key={item.id}
-                    className='mt-5 p-3 bg-orange-100 rounded-md mr-10 flex flex-col justify-between cursor-pointer hover:bg-orange-200 transition duration-150'>
+                    className='mt-5 p-3 bg-orange-100 rounded-md flex flex-col justify-between cursor-pointer hover:bg-orange-200 transition duration-150'>
                     <div className=''>
-                        <Image src={item.image} alt={item.name} width={200} height={200} />
+                        <Image
+                            src={item.image}
+                            alt={item.name}
+                            width={250}
+                            height={200}
+                            className='rounded-md bg-transparent overflow-hidden'
+                        />
                     </div>
-                    <div className=''>
-                        <h3 className='font-medium'>{item.name}</h3>
+                    <div className='mt-6'>
+                        <h3 className='font-medium text-2xl'>{item.name}</h3>
                         <Price price={item.price} />
                     </div>
                 </div>
