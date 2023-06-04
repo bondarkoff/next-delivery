@@ -18,7 +18,7 @@ const RestaurantsList = () => {
     return (
         <div className='pt-7'>
             <div className='text-2xl'>Restaurants List</div>
-            <div className='flex flex-row bg-gray-100 rounded-md mt-5 p-5 shadow-md h-full w-full'>
+            <div className='flex flex-row bg-slate-100 rounded-md mt-5 p-5 shadow-md h-full w-full'>
                 <ul className='border-r-4 w-48'>
                     {restaurants.map(restaurant => (
                         <li
@@ -37,9 +37,12 @@ const RestaurantsList = () => {
                     <>
                         {selectedRestaurant && (
                             <div className='text-xl ml-5'>
-                                <h3 className='text-2xl font-bold'>
-                                    {selectedRestaurant.name} menu
-                                </h3>
+                                <div className='flex flex-col align-middle'>
+                                    <h3 className='text-2xl font-bold'>
+                                        {selectedRestaurant.name} menu
+                                    </h3>
+                                    <p>{selectedRestaurant.items.length} total items.</p>
+                                </div>
                                 <RestaurantsItems items={selectedRestaurant.items} />
                             </div>
                         )}
