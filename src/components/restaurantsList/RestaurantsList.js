@@ -15,44 +15,40 @@ const RestaurantsList = () => {
         setSelectedRestaurant(restaurants);
     };
 
-    console.log(selectedRestaurant);
-
     return (
         <div className='pt-7'>
             <div className='text-2xl'>Restaurants List</div>
-            <div className='bg-gray-100 rounded-md mt-5 p-5 shadow-md'>
-                <div className='flex flex-row'>
-                    <ul className='border-r-4 w-48 '>
-                        {restaurants.map(restaurant => (
-                            <li
-                                className={
-                                    selectedRestaurant && selectedRestaurant.name == restaurant.name
-                                        ? 'text-3xl mt-5 first:mt-0 font-medium transition duration-150 transform hover:scale-105 cursor-pointer'
-                                        : 'text-2xl mt-5 first:mt-0 transition duration-150 hover:scale-105 cursor-pointer'
-                                }
-                                key={restaurant.id}
-                                onClick={() => selectedRestaurantClick(restaurant)}>
-                                <h2>{restaurant.name}</h2>
-                            </li>
-                        ))}
-                    </ul>
-                    {selectedRestaurant ? (
-                        <>
-                            {selectedRestaurant && (
-                                <div className='text-xl ml-5'>
-                                    <h3 className='text-2xl font-bold'>
-                                        {selectedRestaurant.name} menu
-                                    </h3>
-                                    <RestaurantsItems items={selectedRestaurant.items} />
-                                </div>
-                            )}
-                        </>
-                    ) : (
-                        <div className='flex justify-center items-center text-3xl w-full text-gray-400/75'>
-                            Select a restaurant to see its menu
-                        </div>
-                    )}
-                </div>
+            <div className='flex flex-row bg-gray-100 rounded-md mt-5 p-5 shadow-md h-128'>
+                <ul className='border-r-4 w-48'>
+                    {restaurants.map(restaurant => (
+                        <li
+                            className={
+                                selectedRestaurant && selectedRestaurant.name == restaurant.name
+                                    ? 'text-3xl mt-5 first:mt-0 font-medium transition duration-150 transform hover:scale-105 cursor-pointer'
+                                    : 'text-2xl mt-5 first:mt-0 transition duration-150 hover:scale-105 cursor-pointer'
+                            }
+                            key={restaurant.id}
+                            onClick={() => selectedRestaurantClick(restaurant)}>
+                            <h2>{restaurant.name}</h2>
+                        </li>
+                    ))}
+                </ul>
+                {selectedRestaurant ? (
+                    <>
+                        {selectedRestaurant && (
+                            <div className='text-xl ml-5'>
+                                <h3 className='text-2xl font-bold'>
+                                    {selectedRestaurant.name} menu
+                                </h3>
+                                <RestaurantsItems items={selectedRestaurant.items} />
+                            </div>
+                        )}
+                    </>
+                ) : (
+                    <div className='flex justify-center items-center text-3xl w-full text-gray-400/75'>
+                        Please, select a restaurant to see its menu
+                    </div>
+                )}
             </div>
         </div>
     );

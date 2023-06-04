@@ -1,5 +1,5 @@
 import { Kanit } from 'next/font/google';
-import Layout from '@/components/layout';
+import Layout from '@/components/layout/Layout';
 import '@/styles/globals.css';
 
 const kanit = Kanit({ subsets: ['latin'], weight: ['200', '400', '500', '600', '700'] });
